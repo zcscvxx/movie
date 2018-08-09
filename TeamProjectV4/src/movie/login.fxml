@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="455.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movie.MovieControl2">
+   <children>
+      <SplitPane dividerPositions="0.17256637168141592" orientation="VERTICAL" prefHeight="456.0" prefWidth="397.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="395.0" style="-fx-background-color: lightgray;">
+               <children>
+                  <Label layoutX="133.0" layoutY="20.0" text="영화 예매">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="476.0" prefWidth="526.0">
+               <children>
+                  <TabPane fx:id="tab13213" prefHeight="421.0" prefWidth="505.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="로그인">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0" prefWidth="505.0">
+                                 <children>
+                                    <TextField fx:id="loginName" editable="false" layoutX="129.0" layoutY="94.0" promptText="이름" />
+                                    <TextField fx:id="loginGender" editable="false" layoutX="129.0" layoutY="196.0" promptText="성별" />
+                                    <TextField fx:id="loginAge" editable="false" layoutX="129.0" layoutY="147.0" promptText="나이" />
+                                    <TextField fx:id="loginTel" editable="false" layoutX="129.0" layoutY="248.0" promptText="전화번호" />
+                                    <ComboBox fx:id="cusList" layoutX="129.0" layoutY="42.0" onAction="#cusList" prefHeight="23.0" prefWidth="138.0" promptText="회원선택" />
+                                    <Button fx:id="btnLogin" disable="true" layoutX="171.0" layoutY="297.0" mnemonicParsing="false" onAction="#login" text="로그인" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="회원가입">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="97.0" layoutY="56.0" text="이름:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="96.0" layoutY="112.0" text="나이:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="96.0" layoutY="161.0" text="성별:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="82.0" layoutY="211.0" text="전화번호:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="joinName" layoutX="163.0" layoutY="54.0" promptText="이름" />
+                                    <TextField fx:id="joinAge" layoutX="162.0" layoutY="110.0" promptText="나이" />
+                                    <TextField fx:id="joinTel" layoutX="162.0" layoutY="209.0" promptText="010-0000-0000" />
+                                    
+                                                <RadioButton fx:id="btnMale" layoutX="163.0" layoutY="163.0" mnemonicParsing="false" onAction="#male" text="남자" />
+                                    <RadioButton fx:id="btnFemale" layoutX="242.0" layoutY="163.0" mnemonicParsing="false" onAction="#female" text="여자" />
+                                    <Button fx:id="btnJoin" layoutX="163.0" layoutY="272.0" mnemonicParsing="false" onAction="#join" text="회원가입" />
+                                    <TextField fx:id="txtGender" editable="false" layoutX="139.0" layoutY="303.0" visible="false" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="회원탈퇴">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btnLogin2" disable="true" layoutX="203.0" layoutY="298.0" mnemonicParsing="false" onAction="#login2" text="탈퇴하기" />
+                                    <ComboBox fx:id="cusList1" layoutX="129.0" layoutY="42.0" onAction="#cusList1" prefHeight="23.0" prefWidth="138.0" promptText="회원선택" />
+                                    <TextField fx:id="loginTel1" editable="false" layoutX="129.0" layoutY="248.0" promptText="전화번호" />
+                                    <TextField fx:id="loginAge1" editable="false" layoutX="129.0" layoutY="147.0" promptText="나이" />
+                                    <TextField fx:id="loginGender1" editable="false" layoutX="129.0" layoutY="196.0" promptText="성별" />
+                                    <TextField fx:id="loginName1" editable="false" layoutX="129.0" layoutY="94.0" promptText="이름" />
+                                    <Button fx:id="btnLogin1" disable="true" layoutX="129.0" layoutY="298.0" mnemonicParsing="false" onAction="#login1" text="탈퇴하기" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="회원정보수정">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btnLogin3" disable="true" layoutX="171.0" layoutY="297.0" mnemonicParsing="false" onAction="#login3" text="수정하기" />
+                                    <ComboBox fx:id="cusList2" layoutX="129.0" layoutY="42.0" onAction="#cusList2" prefHeight="23.0" prefWidth="138.0" promptText="회원선택" />
+                                    <TextField fx:id="loginTel2" layoutX="129.0" layoutY="248.0" promptText="전화번호" />
+                                    <TextField fx:id="loginAge2" layoutX="129.0" layoutY="147.0" promptText="나이" />
+                                    <TextField fx:id="loginGender2" layoutX="129.0" layoutY="196.0" promptText="성별" />
+                                    <TextField fx:id="loginName2" layoutX="129.0" layoutY="94.0" promptText="이름" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

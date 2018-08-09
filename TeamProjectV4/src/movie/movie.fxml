@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="787.0" prefWidth="942.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movie.MovieControl">
+   <top>
+      <Label text="영화 예매" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <SplitPane orientation="VERTICAL" prefHeight="454.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="469.0" prefWidth="940.0">
+               <children>
+                  <ComboBox fx:id="cmbGenre" layoutX="28.0" layoutY="14.0" onAction="#genre" prefHeight="23.0" prefWidth="109.0" promptText="전체 장르" />
+                  <ComboBox fx:id="cmbGrade" layoutX="158.0" layoutY="14.0" onAction="#grade" prefHeight="23.0" prefWidth="109.0" promptText="전체 등급" />
+                  <Button fx:id="btnSerch" layoutX="28.0" layoutY="47.0" mnemonicParsing="false" onAction="#serch" prefHeight="23.0" prefWidth="109.0" text="검색" />
+                  <ListView fx:id="listMovie" layoutX="28.0" layoutY="79.0" onMouseClicked="#title" prefHeight="251.0" prefWidth="240.0" />
+                  <ImageView fx:id="imgPoster" fitHeight="252.0" fitWidth="202.0" layoutX="299.0" layoutY="79.0" onMouseEntered="#poster" pickOnBounds="true" preserveRatio="true" />
+                  <TextArea fx:id="txtContent" layoutX="528.0" layoutY="79.0" prefHeight="252.0" prefWidth="183.0" />
+                  <ComboBox fx:id="cmbTime" layoutX="749.0" layoutY="127.0" onAction="#time" prefWidth="150.0" promptText="시간" />
+                  <ComboBox fx:id="cmbAmount" layoutX="749.0" layoutY="172.0" onAction="#amount" prefWidth="150.0" promptText="장수" />
+                  <Button fx:id="btnReserve" layoutX="839.0" layoutY="319.0" mnemonicParsing="false" onAction="#reserve" text="예매하기" />
+                  <TextField fx:id="txtTitle" editable="false" layoutX="28.0" layoutY="378.0" prefHeight="23.0" prefWidth="171.0" promptText="제목" />
+                  <TextField fx:id="txtTime" editable="false" layoutX="368.0" layoutY="378.0" prefHeight="23.0" prefWidth="107.0" promptText="시간" />
+                  <TextField fx:id="txtAmount" editable="false" layoutX="501.0" layoutY="378.0" prefHeight="23.0" prefWidth="112.0" promptText="장수" />
+                  <TextField fx:id="txtSeat" editable="false" layoutX="647.0" layoutY="378.0" prefHeight="23.0" prefWidth="106.0" promptText="좌석" />
+                  <TextField fx:id="txtPrice" editable="false" layoutX="780.0" layoutY="378.0" prefHeight="23.0" prefWidth="126.0" promptText="가격" />
+                  <DatePicker fx:id="datePicker" layoutX="747.0" layoutY="79.0" onAction="#datepicker" prefHeight="23.0" prefWidth="153.0" promptText="날짜" />
+                  <TextField fx:id="txtDate" editable="false" layoutX="221.0" layoutY="378.0" prefHeight="23.0" prefWidth="122.0" promptText="날짜" />
+                  <TextField fx:id="txtSeat1" alignment="CENTER" layoutX="745.0" layoutY="221.0" prefHeight="23.0" prefWidth="39.0" promptText="좌석" />
+                  <Button fx:id="btnClear" layoutX="158.0" layoutY="47.0" mnemonicParsing="false" onAction="#clear" prefHeight="23.0" prefWidth="108.0" text="전체 보기" />
+                  <Button fx:id="seat1P" disable="true" layoutX="746.0" layoutY="250.0" mnemonicParsing="false" onAction="#seat1PA" text="1인" />
+                  <Button fx:id="seat2P" disable="true" layoutX="788.0" layoutY="250.0" mnemonicParsing="false" onAction="#seat2PA" text="2인" />
+                  <Button fx:id="seat4P" disable="true" layoutX="872.0" layoutY="250.0" mnemonicParsing="false" onAction="#seat4PA" text="4인" />
+                  <Button fx:id="seat3P" disable="true" layoutX="830.0" layoutY="250.0" mnemonicParsing="false" onAction="#seat3PA" text="3인" />
+                  <Button fx:id="seat5P" disable="true" layoutX="833.0" layoutY="282.0" mnemonicParsing="false" onAction="#seat5PA" prefHeight="23.0" prefWidth="77.0" text="좌석확인" />
+                  <TextField fx:id="txtSeat2" alignment="CENTER" layoutX="787.0" layoutY="221.0" prefHeight="23.0" prefWidth="39.0" promptText="좌석" />
+                  <TextField fx:id="txtSeat3" alignment="CENTER" layoutX="829.0" layoutY="221.0" prefHeight="23.0" prefWidth="39.0" promptText="좌석" />
+                  <TextField fx:id="txtSeat4" alignment="CENTER" layoutX="871.0" layoutY="221.0" prefHeight="23.0" prefWidth="39.0" promptText="좌석" />
+                  <Button fx:id="seatClear" disable="true" layoutX="746.0" layoutY="282.0" mnemonicParsing="false" onAction="#seatClearA" text="좌석초기화" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <TableView fx:id="table" prefHeight="309.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="47.0" text="번호" />
+            <TableColumn fx:id="colName" minWidth="0.0" prefWidth="68.0" text="고객이름" />
+            <TableColumn fx:id="colTel" prefWidth="168.0" text="전화번호" />
+            <TableColumn fx:id="colTitle" prefWidth="157.0" text="제목" />
+            <TableColumn fx:id="colDate" prefWidth="126.0" text="날짜" />
+            <TableColumn fx:id="colTime" prefWidth="108.0" text="시간" />
+            <TableColumn fx:id="colAmount" prefWidth="74.0" text="장수" />
+            <TableColumn fx:id="colSeat" prefWidth="95.0" text="좌석" />
+            <TableColumn fx:id="colPrice" prefWidth="98.0" text="가격" />
+         </columns>
+      </TableView>
+   </bottom>
+</BorderPane>
